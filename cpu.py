@@ -115,8 +115,8 @@ class CPU:
         elif op == "SHR":
             self.reg[reg_a] >>= self.reg[reg_b]
         elif op == "MOD":
-            # self.reg[reg_a] = self.reg[reg_a] - (self.reg[reg_a] // self.reg[reg_b]) * self.reg[reg_b]
-            self.reg[reg_a] %= self.reg[reg_b]
+            self.reg[reg_a] = self.reg[reg_a] - (self.reg[reg_a] // self.reg[reg_b]) * self.reg[reg_b]
+            # self.reg[reg_a] %= self.reg[reg_b]
 
         else:
             raise Exception("Unsupported ALU operation")
